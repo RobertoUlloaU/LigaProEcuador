@@ -1,13 +1,18 @@
 ﻿namespace LigaProEcuador.Models
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Puntaje
     {
-        public static int CalcularPuntos(int partidosGanados, int partidosEmpatados)
-        {
-            // Victoria suma 3 puntos, empate suma 1 punto
-            return (partidosGanados * 3) + (partidosEmpatados * 1);
-        }
+        [Key]
+        public int Id { get; set; }  
+
+        public int PartidosGanados { get; set; }
+        public int PartidosEmpatados { get; set; }
+
+        public int Puntos => (PartidosGanados * 3) + (PartidosEmpatados * 1);  // Calcula los puntos basado en los partidos ganados y empatados
     }
+
 
 
 }

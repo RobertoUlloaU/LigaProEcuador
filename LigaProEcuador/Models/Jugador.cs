@@ -8,6 +8,7 @@
         [Key]
         public int Id { get; set; }
 
+        [MaxLength(100)]
         public string Nombre { get; set; }
         public int NumeroCamiseta { get; set; }
         public int Goles { get; set; }
